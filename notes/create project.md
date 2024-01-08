@@ -3,6 +3,14 @@
 ```powershell
 npm create vue@latest
 ```
+or
+```powershell
+pnpm create vue
+```
+or
+```powershell
+yarn create vue
+```
 
 ### init repository
 
