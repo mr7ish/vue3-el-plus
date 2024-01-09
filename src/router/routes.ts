@@ -3,6 +3,8 @@ import APageVue from "@/components/APage.vue";
 import HomePageVue from "@/components/HomePage.vue";
 import UserPage from "@/components/UserPage.vue";
 import NotFound from "@/components/NotFound.vue";
+import RedItem from "@/components/RedItem.vue";
+import BlueItem from "@/components/BlueItem.vue";
 
 export default [
     {
@@ -21,7 +23,17 @@ export default [
         path: '/users/:id?',
         component: UserPage,
         sensitive: true,
-        strict: true
+        strict: true,
+        children: [
+            {
+                path: 'red',
+                component: RedItem
+            },
+            {
+                path: 'blue',
+                component: BlueItem
+            }
+        ]
     },
     {
         path: '/:pathMatch(.*)*',
