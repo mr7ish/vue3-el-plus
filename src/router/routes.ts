@@ -1,17 +1,31 @@
+import type { RouteRecordRaw } from "vue-router";
 import APageVue from "@/components/APage.vue";
 import HomePageVue from "@/components/HomePage.vue";
-import type { RouteRecordRaw } from "vue-router";
+import UserPage from "@/components/UserPage.vue";
+import NotFound from "@/components/NotFound.vue";
 
 export default [
     {
         path: '/',
         // component: () => import('@/components/HomePage.vue')
-        component: HomePageVue
+        component: HomePageVue,
     },
     {
-        path: '/a',
+        path: '/pagea',
         // component: () => import('@/components/APage.vue')
-        component: APageVue
-    }
+        component: APageVue,
+        // sensitive: true,
+
+    },
+    {
+        path: '/users/:id?',
+        component: UserPage,
+        sensitive: true,
+        strict: true
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        component: NotFound
+    },
 
 ] as RouteRecordRaw[]
