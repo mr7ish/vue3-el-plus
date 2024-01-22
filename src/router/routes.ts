@@ -17,7 +17,10 @@ export default [
         // component: () => import('@/components/APage.vue')
         component: APageVue,
         // sensitive: true,
-
+    },
+    {
+        path: '/gsap',
+        component: () => import('@/components/GsapTest.vue')
     },
     {
         path: '/users/:id?',

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="height: 100%;">
     <router-view v-slot="{ Component }">
       <transition name="fade">
         <component :is="Component" />
