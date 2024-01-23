@@ -1,22 +1,13 @@
 import type { RouteRecordRaw } from "vue-router";
-import APageVue from "@/components/APage.vue";
-import HomePageVue from "@/components/HomePage.vue";
-import UserPage from "@/components/UserPage.vue";
-import NotFound from "@/components/NotFound.vue";
-import RedItem from "@/components/RedItem.vue";
-import BlueItem from "@/components/BlueItem.vue";
-import GsapTest from "@/components/GsapTest.vue";
 
 export default [
     {
         path: '/',
-        // component: () => import('@/components/HomePage.vue')
-        component: HomePageVue,
+        component: () => import('@/components/HomePage.vue')
     },
     {
         path: '/pagea',
-        // component: () => import('@/components/APage.vue')
-        component: APageVue,
+        component: () => import('@/components/APage.vue')
         // sensitive: true,
     },
     {
@@ -25,34 +16,37 @@ export default [
         children: [
             {
                 path: 'test',
-                // component: () => import('@/components/GsapTest.vue'),
-                component: GsapTest
+                component: () => import('@/components/GsapTest.vue'),
             },
             {
                 path: 'sortable',
                 component: () => import('@/components/SortableGrid.vue'),
+            },
+            {
+                path: 'shape-snake',
+                component: () => import('@/components/ShapeSnake.vue'),
             }
         ]
     },
     {
         path: '/users/:id?',
-        component: UserPage,
+        component: () => import('@/components/UserPage.vue'),
         sensitive: true,
         strict: true,
         children: [
             {
                 path: 'red',
-                component: RedItem
+                component: () => import('@/components/RedItem.vue')
             },
             {
                 path: 'blue',
-                component: BlueItem
+                component: () => import('@/components/BlueItem.vue')
             }
         ]
     },
     {
         path: '/:pathMatch(.*)*',
-        component: NotFound
+        component: () => import('@/components/NotFound.vue'),
     },
 
 ] as RouteRecordRaw[]
