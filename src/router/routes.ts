@@ -5,6 +5,7 @@ import UserPage from "@/components/UserPage.vue";
 import NotFound from "@/components/NotFound.vue";
 import RedItem from "@/components/RedItem.vue";
 import BlueItem from "@/components/BlueItem.vue";
+import GsapTest from "@/components/GsapTest.vue";
 
 export default [
     {
@@ -20,7 +21,18 @@ export default [
     },
     {
         path: '/gsap',
-        component: () => import('@/components/GsapTest.vue')
+        component: () => import('@/components/GsapPlayground.vue'),
+        children: [
+            {
+                path: 'test',
+                // component: () => import('@/components/GsapTest.vue'),
+                component: GsapTest
+            },
+            {
+                path: 'sortable',
+                component: () => import('@/components/SortableGrid.vue'),
+            }
+        ]
     },
     {
         path: '/users/:id?',
