@@ -78,15 +78,14 @@ onMounted(() => {
     const timeline = gsap.timeline({ repeat: -1 });
 
     timeline
-    .to(selectAll('#allBoxes rect')[0], {
-        transformOrigin: '100% 50%',
-        rotation: gsap.utils.wrap([75]),
-    })
-    .to(selectAll('#allBoxes rect')[0], {
-        transformOrigin: '107% 50%',
-
-        rotation: gsap.utils.wrap([0]),
-    })
+    // .to(selectAll('#allBoxes rect')[0], {
+    //     transformOrigin: '100% 50%',
+    //     rotation: gsap.utils.wrap([75]),
+    // })
+    // .to(selectAll('#allBoxes rect')[0], {
+    //     transformOrigin: '107% 50%',
+    //     rotation: gsap.utils.wrap([0]),
+    // })
     .to('#allBoxes rect', {
         transformOrigin: '107% 50%',
         rotation: gsap.utils.wrap([180, 180]),
