@@ -25,6 +25,10 @@ export default [
             {
                 path: 'shape-snake',
                 component: () => import('@/components/ShapeSnake.vue'),
+            },
+            {
+                path: 'plane-trails',
+                component: () => import('@/components/PlaneTrails.vue'),
             }
         ]
     },
