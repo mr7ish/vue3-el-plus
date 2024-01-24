@@ -29,6 +29,10 @@ export default [
             {
                 path: 'plane-trails',
                 component: () => import('@/components/PlaneTrails.vue'),
+            },
+            {
+                path: 'rainbow-leap',
+                component: () => import('@/components/RainbowLeap.vue'),
             }
         ]
     },
