@@ -33,6 +33,10 @@ export default [
             {
                 path: 'rainbow-leap',
                 component: () => import('@/components/RainbowLeap.vue'),
+            },
+            {
+                path: 'motion-path',
+                component: () => import('@/components/MotionPath.vue'),
             }
         ]
     },
