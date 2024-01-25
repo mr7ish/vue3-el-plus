@@ -32,37 +32,43 @@
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 import  MotionPathHelper from 'gsap-trial/MotionPathHelper';
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 gsap.registerPlugin(MotionPathPlugin, MotionPathHelper);
 
+let ctx: gsap.Context | null = null;;
+
 onMounted(() => {
-    gsap.config({
-        trialWarn: false
-    } as gsap.GSAPConfig);
+    ctx = gsap.context(self => {
+        gsap.config({
+            trialWarn: false
+        } as gsap.GSAPConfig);
 
-    gsap.set('.astronaut', {
-        scale: 0.5,
-        autoAlpha: 1
+        gsap.set('.astronaut', {
+            scale: 0.5,
+            autoAlpha: 1
+        });
+
+        const timeline = gsap.timeline();
+
+        timeline.to('.astronaut', {
+            duration: 5,
+            ease: 'power1.inOut',
+            immediateRender: true,
+            motionPath: {
+                path: '#path',
+                align: '#path',
+                alignOrigin: [0.5, 0.5],
+                autoRotate: 90
+            },
+        });
+
+        MotionPathHelper.create('.astronaut');
     });
+});
 
-    const timeline = gsap.timeline();
-
-    timeline.to('.astronaut', {
-        duration: 5,
-        ease: 'power1.inOut',
-        immediateRender: true,
-        motionPath: {
-            path: '#path',
-            align: '#path',
-            alignOrigin: [0.5, 0.5],
-            autoRotate: 90
-        },
-        // repeat: -1
-    });
-    
-
-    MotionPathHelper.create('.astronaut');
+onUnmounted(() => {
+    ctx?.revert();
 });
 
 </script>
