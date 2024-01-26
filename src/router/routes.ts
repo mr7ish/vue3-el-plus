@@ -12,31 +12,31 @@ export default [
     },
     {
         path: '/gsap',
-        component: () => import('@/components/GsapPlayground.vue'),
+        component: () => import('@/components/gsap/GsapPlayground.vue'),
         children: [
             {
                 path: 'test',
-                component: () => import('@/components/GsapTest.vue'),
+                component: () => import('@/components/gsap/GsapTest.vue'),
             },
             {
                 path: 'sortable',
-                component: () => import('@/components/SortableGrid.vue'),
+                component: () => import('@/components/gsap/SortableGrid.vue'),
             },
             {
                 path: 'shape-snake',
-                component: () => import('@/components/ShapeSnake.vue'),
+                component: () => import('@/components/gsap/ShapeSnake.vue'),
             },
             {
                 path: 'plane-trails',
-                component: () => import('@/components/PlaneTrails.vue'),
+                component: () => import('@/components/gsap/PlaneTrails.vue'),
             },
             {
                 path: 'rainbow-leap',
-                component: () => import('@/components/RainbowLeap.vue'),
+                component: () => import('@/components/gsap/RainbowLeap.vue'),
             },
             {
                 path: 'motion-path',
-                component: () => import('@/components/MotionPath.vue'),
+                component: () => import('@/components/gsap/MotionPath.vue'),
             }
         ]
     },
