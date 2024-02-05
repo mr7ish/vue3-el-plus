@@ -33,7 +33,10 @@ export default [
                 path: 'blue',
                 component: BlueItem
             }
-        ]
+        ],
+        beforeEnter: (to, from) => {
+            console.log('路由守卫 beforeEnter=>');
+        },
     },
     {
         path: '/:pathMatch(.*)*',
