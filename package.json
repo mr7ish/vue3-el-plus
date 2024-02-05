@@ -13,6 +13,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
+    "gsap-trial": "^3.12.5",
     "vue": "^3.3.11",
     "vue-router": "4"
   },

@@ -1,9 +1,9 @@
 <template>
     <div>
         User: {{ useId }}
-    </div>
-    <div class="color-item">
-        <router-view></router-view>
+        <div class="color-item">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
