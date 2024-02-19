@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { onBeforeRouteLeave, onBeforeRouteUpdate, useRoute, useRouter } from 'vue-router';
 
 const $route = useRoute();
 const $router = useRouter();
@@ -20,6 +20,13 @@ console.log($route);
 
 const useId = computed(() => $route.params.id)
 
+onBeforeRouteUpdate(() => {
+    console.log('组件内守卫 onBeforeRouteUpdate=>');
+})
+
+onBeforeRouteLeave(() => {
+    console.log('组件内守卫 onBeforeRouteLeave=>');
+})
 
 </script>
 

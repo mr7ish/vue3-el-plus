@@ -54,7 +54,10 @@ export default [
                 path: 'blue',
                 component: () => import('@/components/BlueItem.vue')
             }
-        ]
+        ],
+        beforeEnter: (to, from) => {
+            console.log('路由守卫 beforeEnter=>');
+        },
     },
     {
         path: '/:pathMatch(.*)*',
